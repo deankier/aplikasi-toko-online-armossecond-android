@@ -8,7 +8,6 @@
     <style name="TextHeadAuthMenu">
         <item name="android:fontFamily">@font/outfit_bold</item>
         <item name="android:textSize">22sp</item>
-        <item name="android:layout_marginTop">30dp</item>
         <item name="android:textColor">@color/primary_100</item>
     </style>
 
@@ -31,6 +30,31 @@
 
     <style name="OutlinedBox.Overlay" parent="ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox">
         <item name="boxStrokeColor">@color/primary_100</item>
+    </style>
+
+    <style name="TextNavBar">
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:fontFamily">@font/outfit_semi_bold</item>
+        <item name="android:textColor">@color/primary_100</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="TextInContainerLv2">
+        <item name="android:fontFamily">@font/outfit_medium</item>
+        <item name="android:textColor">@color/primary_100</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="TextInContainerLv1">
+        <item name="android:fontFamily">@font/outfit_regular</item>
+        <item name="android:textColor">@color/primary_100</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="PopupMenu" parent="@style/Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@color/white</item>
+        <item name="android:textColor">@color/primary_100</item>
+        <item name="android:fontFamily">@font/outfit_regular</item>
+        <!-- Tambahkan item style lain yang diperlukan -->
     </style>
 
 

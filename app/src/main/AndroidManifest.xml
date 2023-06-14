@@ -12,8 +12,25 @@
         android:theme="@style/Theme.ArmosSecond"
         tools:targetApi="31">
         <activity
+            android:name=".adminactivity.UpdateProdukActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".adminactivity.EditProduk"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".adminactivity.TambahProdukActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".adminactivity.MainAdminActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".SignUpActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".SplashActivity"
             android:exported="true"
@@ -32,7 +49,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

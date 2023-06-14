@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_100"
+    android:background="@color/white"
     tools:context=".LoginActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -45,89 +45,113 @@
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
         app:layout_constraintTop_toTopOf="@+id/guideline_logo_top" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0sp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
         app:layout_constraintEnd_toStartOf="@+id/guideline_right"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
         app:layout_constraintTop_toTopOf="@+id/guideline_logo_bottom">
 
-        <TextView
-            style="@style/TextHeadAuthMenu"
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextHeadAuthMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Login" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lay_et_username"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="Username"
+                android:textColorHint="@color/mtrl_outlined_stroke_color"
+                app:boxStrokeColor="@color/primary_100">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_username_login"
+                    style="@style/TextInputEditTextStyle"
+                    android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lay_et_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="Password"
+                android:textColorHint="@color/mtrl_outlined_stroke_color"
+                app:boxStrokeColor="@color/primary_100"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_password_login"
+                    style="@style/TextInputEditTextStyle"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_login"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="45sp"
+                android:layout_marginTop="20dp"
+                android:text="Login" />
+
+            <TextView
+                android:gravity="center|center_vertical"
+                android:id="@+id/btn_forgot_login"
+                android:layout_gravity="center"
+                android:layout_width="140sp"
+                android:textAlignment="center"
+                android:layout_height="25sp"
+                style="@style/TextHeadAuthMenu"
+                android:layout_marginTop="10dp"
+                android:text="Forgot Password ?"
+                android:clickable="true"
+                android:background="@drawable/bg_button_text"
+                android:textSize="15sp"/>
+
+            <Button
+                android:layout_marginTop="50dp"
+                android:layout_gravity="bottom"
+                android:id="@+id/btn_signup_login"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="45sp"
+                android:text="Sign Up" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/progres_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha=".8"
+        android:gravity="center"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone">
+
+        <ProgressBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login" />
+            android:layout_gravity="center"/>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/lay_et_username"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:hint="Username"
-            android:textColorHint="@color/mtrl_outlined_stroke_color"
-            app:boxStrokeColor="@color/primary_100">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_username_login"
-                style="@style/TextInputEditTextStyle"
-                android:inputType="textPersonName" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/lay_et_password"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:hint="Password"
-            android:textColorHint="@color/mtrl_outlined_stroke_color"
-            app:boxStrokeColor="@color/primary_100"
-            app:passwordToggleEnabled="true">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_password_login"
-                style="@style/TextInputEditTextStyle"
-                android:inputType="textPassword" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <Button
-            android:id="@+id/btn_login"
-            style="@style/ButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="45sp"
-            android:layout_marginTop="20dp"
-            android:text="Login" />
-
-        <TextView
-            android:gravity="center|center_vertical"
-            android:id="@+id/btn_forgot_login"
-            android:layout_gravity="center"
-            android:layout_width="140sp"
-            android:textAlignment="center"
-            android:layout_height="25sp"
-            style="@style/TextHeadAuthMenu"
-            android:layout_marginTop="10dp"
-            android:text="Forgot Password ?"
-            android:clickable="true"
-            android:background="@drawable/bg_button_text"
-            android:textSize="15sp"/>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_sign_up"
-        style="@style/ButtonStyle"
-        android:layout_width="0sp"
-        android:layout_height="45sp"
-        android:text="Sign Up"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
-        app:layout_constraintStart_toStartOf="@+id/guideline_left" />
-
-
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_logo_top"

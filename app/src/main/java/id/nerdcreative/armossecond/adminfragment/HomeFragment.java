@@ -1,9 +1,11 @@
 package id.nerdcreative.armossecond.adminfragment;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
@@ -13,7 +15,6 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,8 +28,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-import id.nerdcreative.armossecond.LoginActivity;
 import id.nerdcreative.armossecond.R;
+import id.nerdcreative.armossecond.authactivity.LoginActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -68,7 +69,7 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    DatabaseReference database = FirebaseDatabase.getInstance().getReference("Produk");
+
     String totalProduk;
     TextView tvTotalProduk;
     CardView toProduk, toStokHabis, toProdukTerjual, toBelumBayar, toKonfirmasi, toChat;
@@ -97,13 +98,13 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("Produk");
         database.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 totalProduk = String.valueOf(snapshot.getChildrenCount());
                 tvTotalProduk.setText(totalProduk);
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -123,9 +124,22 @@ public class HomeFragment extends Fragment {
                         // Tangani klik pada item menu
                         switch (item.getItemId()) {
                             case R.id.mn_popup_logout:
-                                FirebaseAuth.getInstance().signOut();
-                                getActivity().startActivity(new Intent(getActivity(), LoginActivity.class));
-                                getActivity().finish();
+                                new AlertDialog.Builder(getActivity()).setTitle("Logout")
+                                        .setMessage("Yakin ingin Logout?")
+                                                .setPositiveButton("Yakin", new DialogInterface.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(DialogInterface dialog, int which) {
+                                                        FirebaseAuth.getInstance().signOut();
+                                                        getActivity().startActivity(new Intent(getActivity(), LoginActivity.class));
+                                                        getActivity().finish();
+                                                    }
+                                                }).setNegativeButton("Cencel", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                dialog.cancel();
+                                            }
+                                        }).show();
+
                                 return true;
                             default:
                                 return false;

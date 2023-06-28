@@ -21,7 +21,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import id.nerdcreative.armossecond.LoginActivity;
 import id.nerdcreative.armossecond.R;
 
 public class EditProduk extends AppCompatActivity {

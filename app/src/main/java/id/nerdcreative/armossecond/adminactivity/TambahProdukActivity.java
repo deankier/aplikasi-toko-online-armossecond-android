@@ -3,8 +3,6 @@ package id.nerdcreative.armossecond.adminactivity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -38,10 +36,8 @@ import com.google.firebase.storage.UploadTask;
 import java.io.ByteArrayOutputStream;
 import java.util.Random;
 
-import id.nerdcreative.armossecond.MainActivity;
 import id.nerdcreative.armossecond.Produk;
 import id.nerdcreative.armossecond.R;
-import id.nerdcreative.armossecond.adminfragment.ProdukFragment;
 
 public class TambahProdukActivity extends AppCompatActivity {
 

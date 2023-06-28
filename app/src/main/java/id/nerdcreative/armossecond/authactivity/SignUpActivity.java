@@ -1,4 +1,4 @@
-package id.nerdcreative.armossecond;
+package id.nerdcreative.armossecond.authactivity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +21,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import id.nerdcreative.armossecond.DataUser;
+import id.nerdcreative.armossecond.R;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -116,14 +121,17 @@ public class SignUpActivity extends AppCompatActivity {
                     etPassword.setError("Tidak boleh kosong");
                     etPassword.requestFocus();
                     progresLay.setVisibility(View.GONE);
-                }
-                else if (!isValidEmail(Email)) {
+                } else if (Password.length()<6) {
+                    etPassword.setError("Password terlalu pendek");
+                    etPassword.requestFocus();
+                    progresLay.setVisibility(View.GONE);
+                } else if (!isValidEmail(Email)) {
                     etEmail.setError("Masukan email yang valid");
                     etEmail.requestFocus();
                     progresLay.setVisibility(View.GONE);
                 }
                 else {
-                    CreateAcount();
+                    getUsers(Username);
                 }
             }
         });
@@ -138,7 +146,7 @@ public class SignUpActivity extends AppCompatActivity {
         mAuth.createUserWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                DataUser Users = new DataUser(Nama, Username, Email, Phone);
+                DataUser Users = new DataUser(Nama, Username, Email, Phone, "", "");
                 FirebaseDatabase.getInstance().getReference("Users").child("UserAuth").child(Username).setValue(Users)
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
@@ -188,5 +196,23 @@ public class SignUpActivity extends AppCompatActivity {
         String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
         return email.matches(emailPattern);
+    }
+    private void getUsers(String username){
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Users")
+                .child("UserAuth");
+        databaseReference.child(username).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (task.isSuccessful()){
+                    if (task.getResult().exists()){
+                        etUsername.setError("Username sudah ada");
+                        etUsername.requestFocus();
+                        progresLay.setVisibility(View.GONE);
+                    }else {
+                        CreateAcount();
+                    }
+                }
+            }
+        });
     }
 }

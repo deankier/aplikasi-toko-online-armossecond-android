@@ -15,7 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,10 +28,8 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
-import id.nerdcreative.armossecond.LoginActivity;
 import id.nerdcreative.armossecond.Produk;
 import id.nerdcreative.armossecond.R;
-import id.nerdcreative.armossecond.adminfragment.HomeFragment;
 
 public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHolder> {
 

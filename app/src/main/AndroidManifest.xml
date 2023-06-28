@@ -11,26 +11,61 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ArmosSecond"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-9971487200893423~8691131080"/>
+        <activity
+            android:name=".useractivity.EditProfilActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".useractivity.UserNotifActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".useractivity.CartBuyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".useractivity.DirectBuyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".useractivity.CartActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".useractivity.UserChatActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".authactivity.ForgotPassword"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".useractivity.ViewProdukActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".adminactivity.UpdateProdukActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".adminactivity.EditProduk"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".adminactivity.TambahProdukActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".adminactivity.MainAdminActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".authactivity.SignUpActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SplashActivity"
             android:exported="true"
@@ -43,11 +78,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".authactivity.LoginActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainActivity"
+            android:hardwareAccelerated="true"
+            android:name=".useractivity.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
     </application>

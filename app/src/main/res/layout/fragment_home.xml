@@ -123,7 +123,7 @@
                                 android:id="@+id/total_belum_bayar"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="0"
+                                android:text="-"
                                 style="@style/TextInContainerLv2"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -170,7 +170,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 style="@style/TextInContainerLv2"
-                                android:text="0"
+                                android:text="-"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -215,7 +215,7 @@
                                 android:id="@+id/total_chat"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="0"
+                                android:text="-"
                                 style="@style/TextInContainerLv2"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -303,7 +303,7 @@
                                 android:id="@+id/total_produk"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="0"
+                                android:text="-"
                                 style="@style/TextInContainerLv2"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/total" />
@@ -349,7 +349,7 @@
                                 android:id="@+id/total_stok_habis"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="0"
+                                android:text="-"
                                 style="@style/TextInContainerLv2"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/stok" />
@@ -438,7 +438,7 @@
                                 style="@style/TextInContainerLv2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="0"
+                                android:text="-"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/terjual" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -484,7 +484,7 @@
                                 style="@style/TextInContainerLv2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Rp0"
+                                android:text="Rp-"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/pendapatan" />
                         </androidx.constraintlayout.widget.ConstraintLayout>

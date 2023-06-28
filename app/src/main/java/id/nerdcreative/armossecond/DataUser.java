@@ -1,13 +1,15 @@
 package id.nerdcreative.armossecond;
 
 public class DataUser {
-    String dataNama, dataUsername, dataEmail, dataPhone;
+    String dataNama, dataUsername, dataEmail, dataPhone, dataAlamat, dataFoto;
 
-    public DataUser(String dataNama, String dataUsername, String dataEmail, String dataPhone) {
+    public DataUser(String dataNama, String dataUsername, String dataEmail, String dataPhone, String dataAlamat, String dataFoto) {
         this.dataNama = dataNama;
         this.dataUsername = dataUsername;
         this.dataEmail = dataEmail;
         this.dataPhone = dataPhone;
+        this.dataAlamat = dataAlamat;
+        this.dataFoto = dataFoto;
     }
 
     public String getDataNama() {
@@ -42,4 +44,19 @@ public class DataUser {
         this.dataPhone = dataPhone;
     }
 
+    public String getDataAlamat() {
+        return dataAlamat;
+    }
+
+    public void setDataAlamat(String dataAlamat) {
+        this.dataAlamat = dataAlamat;
+    }
+
+    public String getDataFoto() {
+        return dataFoto;
+    }
+
+    public void setDataFoto(String dataFoto) {
+        this.dataFoto = dataFoto;
+    }
 }

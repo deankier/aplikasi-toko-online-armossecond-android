@@ -1,4 +1,4 @@
-package id.nerdcreative.armossecond;
+package id.nerdcreative.armossecond.authactivity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,7 +27,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import id.nerdcreative.armossecond.R;
 import id.nerdcreative.armossecond.adminactivity.MainAdminActivity;
+import id.nerdcreative.armossecond.useractivity.MainActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -129,6 +131,12 @@ public class LoginActivity extends AppCompatActivity {
                 else {
                     getAdmin(Username);
                 }
+            }
+        });
+        BtnForgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, ForgotPassword.class));
             }
         });
         BtnSignUp.setOnClickListener(new View.OnClickListener() {
